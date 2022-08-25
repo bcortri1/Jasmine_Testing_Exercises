@@ -11,7 +11,12 @@ describe("Servers test (with setup and tear-down)", function() {
     expect(allServers['server' + serverId].serverName).toEqual('Alice');
   });
 
+
   afterEach(function() {
     // teardown logic
+    serverNameInput.value = '';
+    allServers = {};
+    serverId = 0;
+    document.querySelector("#server1").remove();
   });
 });
