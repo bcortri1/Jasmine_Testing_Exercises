@@ -42,8 +42,12 @@ function createCurPayment() {
     return {
       billAmt: billAmt,
       tipAmt: tipAmt,
-      tipPercent: calculateTipPercent(billAmt, tipAmt),
+      tipPercent: calculateTipPercent(billAmt, tipAmt)
     }
+  }
+  //Added for readability
+  else{
+    return undefined;
   }
 }
 
