@@ -35,5 +35,8 @@ describe("Servers test (with setup and tear-down)", function() {
     if (document.querySelector("#server1")) {
       document.querySelector("#server1").remove()
     };
+    if (document.querySelector("#server2")) {
+      document.querySelector("#server2").remove()
+    };
   });
 });
