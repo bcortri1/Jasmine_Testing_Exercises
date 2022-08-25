@@ -26,14 +26,23 @@ function calculateMonthlyPayment(values) {
   let principle = values.amount;
   let interest = values.rate/12;
   let n = values.years*12;
-  let payment = (principle*interest)/1-((1+interest)^-n)
-  return payment;
+  if (n == 0){
+    return principle.toFixed(2);
+  }
+  if (interest == 0){
+    return (principle/n).toFixed(2);
+  }
+  let payment = (principle*interest)/(1-((1+interest)**(0-n)))
+  if(isNaN(payment)) {
+    return 0.00;
+  }
+  return payment.toFixed(2);
 }
 
 // Given a string representing the monthly payment value,
 // update the UI to show the value.
 function updateMonthly(monthly) {
-  document.getElementById("monthly-payment").innerText ="$" + monthly.toFixed(2);
+  document.getElementById("monthly-payment").innerText ="$" + monthly;
 }
 
 // Get the current values from the UI
