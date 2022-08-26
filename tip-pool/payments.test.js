@@ -122,3 +122,7 @@ afterEach(function() {
     summaryTds[2].innerHTML = '';
 
 });
+
+afterAll(function(){
+    updateSummary();
+})

@@ -69,7 +69,7 @@ describe("Testing caculateTipPercent()", function() {
 });
 
 describe("Testing appendTd()", function() {
-    it('Should return a count of one', function() {
+    it('Should return a count of 1', function() {
         let tr = document.createElement('TR')
         appendTd(tr,'test')
         expect(tr.childElementCount).toEqual(1);
@@ -82,8 +82,17 @@ describe("Testing appendTd()", function() {
     });
 });
 
+describe("Testing appendDeleteBtn()", function() {
+    it('Should create one delete btn', function() {
+        let tr = document.createElement('TR')
+        appendDeleteBtn(tr);
+        expect(tr.childElementCount).toEqual(1);
+    });
+});
+
 afterEach(function() {
     allPayments={};
     type = '';
     tr = '';
 });
+
